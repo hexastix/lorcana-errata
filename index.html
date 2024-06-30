@@ -592,7 +592,7 @@
         button.addEventListener("change", arrange);
       });
 
-      isotope.on("layoutComplete", (filteredItems) => {
+      isotope.on("arrangeComplete", (filteredItems) => {
         document.querySelectorAll(".num-filtered").forEach((element) => {
           element.innerHTML = filteredItems.length;
         });
