@@ -20,6 +20,68 @@
             Cartes Disney Lorcana avec des textes incorrects en français
           </span>
         </div>
+        <div>
+          <span class="navbar-text me-2"><span class="num-filtered">37</span>/37 cartes</span>
+          <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Filtres (<span class="num-filtered">37</span>/37 cartes)</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <h6>Set</h6>
+            <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-set1" data-filter=".set1">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-set1">Premier Chapitre</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-set2" data-filter=".set2">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-set2">L’Ascension des Floodborn</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-set3" data-filter=".set3">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-set3">Les Terres d’Encres</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-set4" data-filter=".set4">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-set4">Le retour d’Ursula</label>
+            </div>
+            <h6>Couleur d’Encre</h6>
+            <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-ambre" data-filter=".ambre">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-ambre">Ambre</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-amethyste" data-filter=".amethyste">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-amethyste">Améthyste</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-emeraude" data-filter=".emeraude">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-emeraude">Émeraude</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-rubis" data-filter=".rubis">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-rubis">Rubis</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-saphir" data-filter=".saphir">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-saphir">Saphir</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-acier" data-filter=".acier">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-acier">Acier</label>
+            </div>
+            <h6>Type de texte</h6>
+            <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-classification" data-filter=".classification">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-classification">Classification</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-effet" data-filter=".effet">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-effet">Effet</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-capacite" data-filter=".capacite">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-capacite">Capacité</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-rappel" data-filter=".rappel">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-rappel">Rappel de mot-clé</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-lore" data-filter=".lore">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-lore">Valeur de Lore</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-ambiance" data-filter=".ambiance">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-ambiance">Texte d’ambiance</label>
+            </div>
+            <h6>Impact sur le jeu</h6>
+            <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-impact-oui" data-filter=".impact-oui">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-impact-oui">Oui</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-impact-non" data-filter=".impact-non">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-impact-non">Non</label>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
     <nav class="navbar d-lg-none bg-dark-subtle">
@@ -43,6 +105,7 @@
     <script>
       const cards = [
         {
+          filters: "set1 ambre rappel impact-oui",
           name: "Dingo",
           version: "Mousquetaire",
           image: "images/001_004.jpg",
@@ -52,6 +115,7 @@
           number: "4/204 · FR · 1",
         },
         {
+          filters: "set1 ambre rappel impact-oui",
           name: "Maximus",
           version: "Cheval du palais",
           image: "images/001_010.jpg",
@@ -61,6 +125,7 @@
           number: "10/204 · FR · 1",
         },
         {
+          filters: "set1 ambre capacite impact-oui",
           name: "Prince Philippe",
           version: "Tueur de dragon",
           image: "images/001_016.jpg",
@@ -70,6 +135,7 @@
           number: "16/204 · FR · 1",
         },
         {
+          filters: "set1 ambre rappel impact-oui",
           name: "Simba",
           version: "Lionceau protecteur",
           image: "images/001_020.jpg",
@@ -79,6 +145,7 @@
           number: "20/204 · FR · 1",
         },
         {
+          filters: "set1 ambre lore impact-oui",
           name: "Stitch",
           version: "Surfeur insouciant",
           image: "images/001_021.jpg",
@@ -88,6 +155,7 @@
           number: "21/204 · FR · 1",
         },
         {
+          filters: "set1 amethyste capacite impact-non",
           name: "Ursula",
           version: "Assoifée de pouvoir",
           image: "images/001_059.jpg",
@@ -97,6 +165,7 @@
           number: "59/204 · FR · 1",
         },
         {
+          filters: "set1 amethyste effet impact-oui",
           name: "Emberlificotage",
           version: "",
           image: "images/001_062.jpg",
@@ -106,6 +175,7 @@
           number: "62/204 · FR · 1",
         },
         {
+          filters: "set1 emeraude capacite impact-oui",
           name: "Cruella d’Enfer",
           version: "Cruelle Diablesse",
           image: "images/001_072.jpg",
@@ -115,6 +185,7 @@
           number: "72/204 · FR · 1",
         },
         {
+          filters: "set1 emeraude capacite impact-oui",
           name: "Génie",
           version: "Fait le show",
           image: "images/001_075.jpg",
@@ -124,6 +195,7 @@
           number: "75/204 · FR · 1",
         },
         {
+          filters: "set1 emeraude effet impact-oui",
           name: "N’écoute que moi",
           version: "",
           image: "images/001_095.jpg",
@@ -133,6 +205,7 @@
           number: "95/204 · FR · 1",
         },
         {
+          filters: "set1 rubis classification impact-non",
           name: "Raiponce",
           version: "Lançant sa chevelure",
           image: "images/001_121.jpg",
@@ -142,6 +215,7 @@
           number: "121/204 · FR · 1",
         },
         {
+          filters: "set1 saphir rappel impact-non",
           name: "Tui",
           version: "Chef respecté",
           image: "images/001_143.jpg",
@@ -151,6 +225,7 @@
           number: "143/204 · FR · 1",
         },
         {
+          filters: "set1 saphir capacite impact-oui",
           name: "Panier de noix de coco",
           version: "",
           image: "images/001_166.jpg",
@@ -160,6 +235,7 @@
           number: "166/204 · FR · 1",
         },
         {
+          filters: "set1 acier rappel impact-oui",
           name: "Donald",
           version: "Mousquetaire",
           image: "images/001_177.jpg",
@@ -169,6 +245,7 @@
           number: "177/204 · FR · 1",
         },
         {
+          filters: "set1 acier rappel impact-oui",
           name: "Hercule",
           version: "Vrai héros",
           image: "images/001_181.jpg",
@@ -178,6 +255,7 @@
           number: "181/204 · FR · 1",
         },
         {
+          filters: "set2 ambre capacite impact-non",
           name: "Atchoum",
           version: "Très allergique",
           image: "images/002_022.jpg",
@@ -187,6 +265,7 @@
           number: "22/204 · FR · 2",
         },
         {
+          filters: "set2 ambre effet impact-oui",
           name: "De zéro en héros",
           version: "",
           image: "images/002_032.jpg",
@@ -196,6 +275,7 @@
           number: "32/204 · FR · 2",
         },
         {
+          filters: "set2 emeraude capacite impact-non",
           name: "Belle",
           version: "Archère dissimulée",
           image: "images/002_072.jpg",
@@ -205,6 +285,7 @@
           number: "72/204 · FR · 2",
         },
         {
+          filters: "set2 emeraude effet impact-oui",
           name: "Rebondir",
           version: "",
           image: "images/002_097.jpg",
@@ -214,6 +295,7 @@
           number: "97/204 · FR · 2",
         },
         {
+          filters: "set2 rubis ambiance impact-non",
           name: "Fidget",
           version: "Homme de main de Ratigan",
           image: "images/002_108.jpg",
@@ -223,6 +305,7 @@
           number: "108/204 · FR · 2",
         },
         {
+          filters: "set2 rubis classification impact-non",
           name: "Tigrou",
           version: "Unique en son genre",
           image: "images/002_127.jpg",
@@ -232,6 +315,7 @@
           number: "127/204 · FR · 2",
         },
         {
+          filters: "set2 rubis capacite impact-oui",
           name: "Clochette du dîner",
           version: "",
           image: "images/002_134.jpg",
@@ -241,6 +325,7 @@
           number: "134/204 · FR · 2",
         },
         {
+          filters: "set2 acier rappel impact-oui",
           name: "Namaari",
           version: "Brume matinale",
           image: "images/002_189.jpg",
@@ -250,6 +335,7 @@
           number: "189/204 · FR · 2",
         },
         {
+          filters: "set2 acier capacite impact-non",
           name: "Le chasseur",
           version: "Homme de main réticent",
           image: "images/002_194.jpg",
@@ -259,6 +345,7 @@
           number: "194/204 · FR · 2",
         },
         {
+          filters: "set2 acier rappel impact-oui",
           name: "Le Prince",
           version: "N’abandonne jamais",
           image: "images/002_195.jpg",
@@ -268,6 +355,7 @@
           number: "195/204 · FR · 2",
         },
         {
+          filters: "set3 ambre rappel impact-oui",
           name: "Baloo",
           version: "von Bruinwald XIII",
           image: "images/003_001.jpg",
@@ -277,6 +365,7 @@
           number: "1/204 · FR · 3",
         },
         {
+          filters: "set3 ambre rappel impact-oui",
           name: "Amadou Gentil",
           version: "Le docteur",
           image: "images/003_005.jpg",
@@ -286,6 +375,7 @@
           number: "5/204 · FR · 3",
         },
         {
+          filters: "set3 ambre rappel impact-oui",
           name: "Nani",
           version: "Sœur protectrice",
           image: "images/003_012.jpg",
@@ -295,6 +385,7 @@
           number: "12/204 · FR · 3",
         },
         {
+          filters: "set3 ambre rappel impact-oui",
           name: "Pluto",
           version: "Protecteur déterminé",
           image: "images/003_017.jpg",
@@ -304,6 +395,7 @@
           number: "17/204 · FR · 3",
         },
         {
+          filters: "set3 emeraude capacite impact-oui",
           name: "Frère Tuck",
           version: "Prêtre de Nottingham",
           image: "images/003_073.jpg",
@@ -313,6 +405,7 @@
           number: "73/204 · FR · 3",
         },
         {
+          filters: "set3 emeraude classification impact-non",
           name: "Ursula",
           version: "La plus perfide de toutes",
           image: "images/003_091.jpg",
@@ -322,6 +415,7 @@
           number: "91/204 · FR · 3",
         },
         {
+          filters: "set3 rubis capacite impact-oui",
           name: "Prince Éric",
           version: "Maître timonier",
           image: "images/003_121.jpg",
@@ -331,6 +425,7 @@
           number: "121/204 · FR · 3",
         },
         {
+          filters: "set3 saphir rappel impact-oui",
           name: "Kit",
           version: "Copilote",
           image: "images/003_147.jpg",
@@ -340,6 +435,7 @@
           number: "147/204 · FR · 3",
         },
         {
+          filters: "set3 acier rappel impact-oui",
           name: "Kida",
           version: "Guerrière royale",
           image: "images/003_177.jpg",
@@ -349,6 +445,7 @@
           number: "177/204 · FR · 3",
         },
         {
+          filters: "set3 acier rappel impact-oui",
           name: "Petit Jean",
           version: "Compagnon de Robin",
           image: "images/003_179.jpg",
@@ -358,6 +455,7 @@
           number: "179/204 · FR · 3",
         },
         {
+          filters: "set4 rubis capacite impact-oui",
           name: "Tuk Tuk",
           version: "Partenaire percutant",
           image: "images/004_127.jpg",
@@ -367,6 +465,7 @@
           number: "127/204 · FR · 4",
         },
         {
+          filters: "set4 saphir capacite impact-oui",
           name: "Hans",
           version: "Noble crapule",
           image: "images/004_146.jpg",
@@ -382,7 +481,7 @@
       cards.forEach((card) => {
         let gridItem = document.createElement("div");
         grid.appendChild(gridItem);
-        gridItem.setAttribute("class", "grid-item");
+        gridItem.setAttribute("class", `grid-item ${card.filters}`);
 
         let cardElement = document.createElement("div");
         gridItem.appendChild(cardElement);
@@ -453,6 +552,39 @@
       let isotope = new Isotope(
         "#grid", {itemSelector: ".grid-item", masonry: { horizontalOrder: true }}
       );
+
+      const arrange = (event) => {
+        let combinations = [];
+        Array.from(document.querySelectorAll(".button-group"))
+          .map((group) => Array.from(group.querySelectorAll(".btn-check")))
+          .map((buttons) =>
+            buttons
+              .filter((button) => button.checked)
+              .map((button) => button.getAttribute("data-filter"))
+          )
+          .forEach((filters) => {
+            if (combinations.length === 0) {
+              combinations.push(...filters);
+            } else if (filters.length !== 0) {
+              combinations = [].concat(
+                ...combinations.map(c => filters.map(f => c.concat(f)))
+              );
+            }
+          });
+        isotope.arrange({filter: combinations.join()});
+      };
+
+      arrange(null);
+
+      document.querySelectorAll(".btn-check").forEach((button) => {
+        button.addEventListener("change", arrange);
+      });
+
+      isotope.on("layoutComplete", (filteredItems) => {
+        document.querySelectorAll(".num-filtered").forEach((element) => {
+          element.innerHTML = filteredItems.length;
+        });
+      });
     </script>
   </body>
 </html>
