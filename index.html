@@ -509,10 +509,15 @@
 
         let cardHeaderRight = document.createElement("div");
         cardHeaderRow.appendChild(cardHeaderRight);
-        cardHeaderRight.setAttribute("class", "col-auto position-relative");
+        cardHeaderRight.setAttribute("class", "col-auto");
+
+        let cardThumbnailContainer = document.createElement("div");
+        cardHeaderRight.appendChild(cardThumbnailContainer);
+        cardThumbnailContainer.setAttribute("class", "position-relative");
+        cardThumbnailContainer.setAttribute("style", "height: 100%");
 
         let cardThumbnail = document.createElement("img");
-        cardHeaderRight.appendChild(cardThumbnail);
+        cardThumbnailContainer.appendChild(cardThumbnail);
         cardThumbnail.setAttribute("class", "position-absolute end-0");
         cardThumbnail.setAttribute("style", "max-height: 100%;");
         cardThumbnail.setAttribute("src", card.image);
