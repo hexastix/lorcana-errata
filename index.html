@@ -12,11 +12,442 @@
     >
   </head>
   <body>
+    <nav class="navbar sticky-top bg-dark-subtle">
+      <div class="container">
+        <div class="d-flex flex-row">
+          <span class="navbar-brand">lorcana-errata</span>
+          <span class="navbar-text d-none d-lg-inline">
+            Cartes Disney Lorcana avec des textes incorrects en français
+          </span>
+        </div>
+      </div>
+    </nav>
+    <nav class="navbar d-lg-none bg-dark-subtle">
+      <div class="container">
+        <span class="navbar-text">
+          Cartes Disney Lorcana avec des textes incorrects en français
+        </span>
+      </div>
+    </nav>
+    <div class="container my-3">
+      <div id="grid" class="row row-cols-md-2 row-cols-lg-3 g-3">
+      </div>
+    </div>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script>
+      const cards = [
+        {
+          name: "Dingo",
+          version: "Mousquetaire",
+          image: "images/001_004.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "4/204 · FR · 1",
+        },
+        {
+          name: "Maximus",
+          version: "Cheval du palais",
+          image: "images/001_010.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "10/204 · FR · 1",
+        },
+        {
+          name: "Prince Philippe",
+          version: "Tueur de dragon",
+          image: "images/001_016.jpg",
+          incorrectText: "Si ce personnage est défié et banni, vous pouvez bannir le personnage qui l’a défié.",
+          correctedText: "Lorsque ce personnage en défie un autre et qu’il se fait bannir, vous pouvez bannir le personnage défié.",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "16/204 · FR · 1",
+        },
+        {
+          name: "Simba",
+          version: "Lionceau protecteur",
+          image: "images/001_020.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "20/204 · FR · 1",
+        },
+        {
+          name: "Stitch",
+          version: "Surfeur insouciant",
+          image: "images/001_021.jpg",
+          incorrectText: "1 {L}",
+          correctedText: "2 {L}",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "21/204 · FR · 1",
+        },
+        {
+          name: "Ursula",
+          version: "Assoifée de pouvoir",
+          image: "images/001_059.jpg",
+          incorrectText: "Vous pouvez piochez une carte [...]",
+          correctedText: "Vous pouvez piocher une carte [...]",
+          officialCorrection: "Aucune",
+          number: "59/204 · FR · 1",
+        },
+        {
+          name: "Emberlificotage",
+          version: "",
+          image: "images/001_062.jpg",
+          incorrectText: "Renvoyez un personnage ou un objet [...]",
+          correctedText: "Choisissez et renvoyez un personnage ou un objet [...]",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "62/204 · FR · 1",
+        },
+        {
+          name: "Cruella d’Enfer",
+          version: "Cruelle Diablesse",
+          image: "images/001_072.jpg",
+          incorrectText: "Lorsque ce personnage est banni via un défi, [...]",
+          correctedText: "Lorsque ce personnage est défié et banni, [...]",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "72/204 · FR · 1",
+        },
+        {
+          name: "Génie",
+          version: "Fait le show",
+          image: "images/001_075.jpg",
+          incorrectText: "Lorsque vous jouez ce personnage, choisissez un personnage et renvoyez-le dans la main de son propriétaire.",
+          correctedText: "Lorsque vous jouez ce personnage, vous pouvez choisir un personnage et le renvoyer dans la main de son propriétaire.",
+          officialCorrection: "Aucune",
+          number: "75/204 · FR · 1",
+        },
+        {
+          name: "N’écoute que moi",
+          version: "",
+          image: "images/001_095.jpg",
+          incorrectText: "Renvoyez une carte personnage de sa défausse dans la main de son propriétaire.",
+          correctedText: "Choisissez et renvoyez un personnage en jeu dans la main de son propriétaire.",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "95/204 · FR · 1",
+        },
+        {
+          name: "Raiponce",
+          version: "Lançant sa chevelure",
+          image: "images/001_121.jpg",
+          incorrectText: "Storyborn",
+          correctedText: "Dreamborn",
+          officialCorrection: "Corrigé lors de la réimpression",
+          number: "121/204 · FR · 1",
+        },
+        {
+          name: "Tui",
+          version: "Chef respecté",
+          image: "images/001_143.jpg",
+          incorrectText: "Lorsque ce personnage est envoyé àl’aventure, [...]",
+          correctedText: "Lorsque ce personnage est envoyé à l’aventure, [...]",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "143/204 · FR · 1",
+        },
+        {
+          name: "Panier de noix de coco",
+          version: "",
+          image: "images/001_166.jpg",
+          incorrectText: "[...], vous pouvez choisir un autre personnage et [...]",
+          correctedText: "[...], vous pouvez choisir un personnage et [...]",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "166/204 · FR · 1",
+        },
+        {
+          name: "Donald",
+          version: "Mousquetaire",
+          image: "images/001_177.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "177/204 · FR · 1",
+        },
+        {
+          name: "Hercule",
+          version: "Vrai héros",
+          image: "images/001_181.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "181/204 · FR · 1",
+        },
+        {
+          name: "Atchoum",
+          version: "Très allergique",
+          image: "images/002_022.jpg",
+          incorrectText: "[...], vous pouvez choisissez un personnage [...]",
+          correctedText: "[...], vous pouvez choisir un personnage [...]",
+          officialCorrection: "Aucune",
+          number: "22/204 · FR · 2",
+        },
+        {
+          name: "De zéro en héros",
+          version: "",
+          image: "images/002_032.jpg",
+          incorrectText: "Le prochain personnage que vous jouez durant ce tour vous coûte -X , X étant le nombre de personnages que vous avez en jeu à ce moment-là.",
+          correctedText: "Le prochain personnage que vous jouez durant ce tour coûte X {I} de moins, X étant le nombre de personnages que vous avez en jeu.",
+          officialCorrection: "Aucune",
+          number: "32/204 · FR · 2",
+        },
+        {
+          name: "Belle",
+          version: "Archère dissimulée",
+          image: "images/002_072.jpg",
+          incorrectText: "Lorsque ce personne est défié, [...]",
+          correctedText: "Lorsque ce personnage est défié, [...]",
+          officialCorrection: "Corrigé lors de la réimpression",
+          number: "72/204 · FR · 2",
+        },
+        {
+          name: "Rebondir",
+          version: "",
+          image: "images/002_097.jpg",
+          incorrectText: "<i>(Première impression)</i> Choisissez l’un de vos personnages pour renvoyer un personnage adverse dans la main de son propriétaire.<br /><i>(Deuxième impression)</i> Choisissez un de vos personnages et un autres personnage. Renvoyez ces deux personnages dans la main de leur propriétaire.",
+          correctedText: "Choisissez un de vos personnages pour renvoyer un autre personnage dans la main de son propriétaire.",
+          officialCorrection: "Aucune",
+          number: "97/204 · FR · 2",
+        },
+        {
+          name: "Fidget",
+          version: "Homme de main de Ratigan",
+          image: "images/002_108.jpg",
+          incorrectText: "Là ou un acolyte [...]",
+          correctedText: "Là où un acolyte [...]",
+          officialCorrection: "Corrigé lors de la réimpression",
+          number: "108/204 · FR · 2",
+        },
+        {
+          name: "Tigrou",
+          version: "Unique en son genre",
+          image: "images/002_127.jpg",
+          incorrectText: "Tigre",
+          correctedText: "Tigrou",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "127/204 · FR · 2",
+        },
+        {
+          name: "Clochette du dîner",
+          version: "",
+          image: "images/002_134.jpg",
+          incorrectText: "Choisissez l’un de vos personnages blessés et [...]",
+          correctedText: "Choisissez l’un de vos personnages et [...]",
+          officialCorrection: "Aucune",
+          number: "134/204 · FR · 2",
+        },
+        {
+          name: "Namaari",
+          version: "Brume matinale",
+          image: "images/002_189.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "189/204 · FR · 2",
+        },
+        {
+          name: "Le chasseur",
+          version: "Homme de main réticent",
+          image: "images/002_194.jpg",
+          incorrectText: "[...], vous pouvez piochez une carte [...]",
+          correctedText: "[...], vous pouvez piocher une carte [...]",
+          officialCorrection: "Corrigé sur l’application et lors de la réimpression",
+          number: "194/204 · FR · 2",
+        },
+        {
+          name: "Le Prince",
+          version: "N’abandonne jamais",
+          image: "images/002_195.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Aucune",
+          number: "195/204 · FR · 2",
+        },
+        {
+          name: "Baloo",
+          version: "von Bruinwald XIII",
+          image: "images/003_001.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "1/204 · FR · 3",
+        },
+        {
+          name: "Amadou Gentil",
+          version: "Le docteur",
+          image: "images/003_005.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "5/204 · FR · 3",
+        },
+        {
+          name: "Nani",
+          version: "Sœur protectrice",
+          image: "images/003_012.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "12/204 · FR · 3",
+        },
+        {
+          name: "Pluto",
+          version: "Protecteur déterminé",
+          image: "images/003_017.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "17/204 · FR · 3",
+        },
+        {
+          name: "Frère Tuck",
+          version: "Prêtre de Nottingham",
+          image: "images/003_073.jpg",
+          incorrectText: "[...], l’adversaire ou les adversaires ayant le plus de cartes en main [...]",
+          correctedText: "[...], le joueur ou les joueurs ayant le plus de cartes en main [...]",
+          officialCorrection: "Aucune",
+          number: "73/204 · FR · 3",
+        },
+        {
+          name: "Ursula",
+          version: "La plus perfide de toutes",
+          image: "images/003_091.jpg",
+          incorrectText: "Storyborn",
+          correctedText: "Dreamborn",
+          officialCorrection: "Corrigé sur l’application",
+          number: "91/204 · FR · 3",
+        },
+        {
+          name: "Prince Éric",
+          version: "Maître timonier",
+          image: "images/003_121.jpg",
+          incorrectText: "[...], choisissez un personnage et bannissez-le.",
+          correctedText: "[...], vous pouvez choisir un personnage et le bannir.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "121/204 · FR · 3",
+        },
+        {
+          name: "Kit",
+          version: "Copilote",
+          image: "images/003_147.jpg",
+          incorrectText: "Les adversaires ne peuvent pas défier ce personnage, [...]",
+          correctedText: "Les adversaires ne peuvent pas choisir ce personnage, [...]",
+          officialCorrection: "Aucune",
+          number: "147/204 · FR · 3",
+        },
+        {
+          name: "Kida",
+          version: "Guerrière royale",
+          image: "images/003_177.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "177/204 · FR · 3",
+        },
+        {
+          name: "Petit Jean",
+          version: "Compagnon de Robin",
+          image: "images/003_179.jpg",
+          incorrectText: "Lorsqu’il vous défie, un personnage adverse doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          correctedText: "Lorsqu’un adversaire défie l’un de vos personnages, il doit, si possible, choisir l’un de vos personnages avec Rempart.",
+          officialCorrection: "Corrigé sur l’application",
+          number: "179/204 · FR · 3",
+        },
+        {
+          name: "Tuk Tuk",
+          version: "Partenaire percutant",
+          image: "images/004_127.jpg",
+          incorrectText: "[...], vous pouvez choisir un autre personnage et les déplacer tous les deux gratuitement sur un même lieu. Le personnage choisi gagne +2 {S} pour le reste de ce tour.",
+          correctedText: "[...], vous pouvez le déplacer et un autre de vos personnages sur le même lieu gratuitement. L’autre personnage gagne +2 {S} pour le reste de ce tour.",
+          officialCorrection: "Aucune",
+          number: "127/204 · FR · 4",
+        },
+        {
+          name: "Hans",
+          version: "Noble crapule",
+          image: "images/004_146.jpg",
+          incorrectText: "Si vous avez un personnage Princesse ou Reine en jeu lorsque vous jouez ce personnage, [...]",
+          correctedText: "Lorsque vous jouez ce personnage, s’il y a un personnage Princesse ou Reine en jeu, [...]",
+          officialCorrection: "Aucune",
+          number: "146/204 · FR · 4",
+        },
+      ];
+
+      let grid = document.getElementById("grid");
+
+      cards.forEach((card) => {
+        let gridItem = document.createElement("div");
+        grid.appendChild(gridItem);
+        gridItem.setAttribute("class", "grid-item");
+
+        let cardElement = document.createElement("div");
+        gridItem.appendChild(cardElement);
+        cardElement.setAttribute("class", "card border-secondary");
+
+        let cardHeader = document.createElement("div");
+        cardElement.appendChild(cardHeader);
+        cardHeader.setAttribute("class", "card-header");
+
+        let cardHeaderRow = document.createElement("div");
+        cardHeader.appendChild(cardHeaderRow);
+        cardHeaderRow.setAttribute("class", "row");
+
+        let cardHeaderLeft = document.createElement("div");
+        cardHeaderRow.appendChild(cardHeaderLeft);
+        cardHeaderLeft.setAttribute("class", "col");
+
+        let cardNameHeading = document.createElement("h5");
+        cardHeaderLeft.appendChild(cardNameHeading);
+        cardNameHeading.appendChild(document.createTextNode(card.name));
+
+        let cardVersionHeading = document.createElement("h6");
+        cardHeaderLeft.appendChild(cardVersionHeading);
+        cardVersionHeading.appendChild(document.createTextNode(card.version || "\u00A0"));
+
+        let cardHeaderRight = document.createElement("div");
+        cardHeaderRow.appendChild(cardHeaderRight);
+        cardHeaderRight.setAttribute("class", "col-auto position-relative");
+
+        let cardThumbnail = document.createElement("img");
+        cardHeaderRight.appendChild(cardThumbnail);
+        cardThumbnail.setAttribute("class", "position-absolute end-0");
+        cardThumbnail.setAttribute("style", "max-height: 100%;");
+        cardThumbnail.setAttribute("src", card.image);
+
+        let cardBody = document.createElement("div");
+        cardElement.appendChild(cardBody);
+        cardBody.setAttribute("class", "card-body");
+
+        let incorrectHeader = document.createElement("h6");
+        cardBody.appendChild(incorrectHeader);
+        incorrectHeader.appendChild(document.createTextNode("Texte incorrect"));
+        let incorrectParagraph = document.createElement("p");
+        cardBody.appendChild(incorrectParagraph);
+        incorrectParagraph.innerHTML = card.incorrectText;
+
+        let correctedHeader = document.createElement("h6");
+        cardBody.appendChild(correctedHeader);
+        correctedHeader.appendChild(document.createTextNode("Texte corrigé"));
+        let correctedParagraph = document.createElement("p");
+        cardBody.appendChild(correctedParagraph);
+        correctedParagraph.innerHTML = card.correctedText;
+
+        let officialHeader = document.createElement("h6");
+        cardBody.appendChild(officialHeader);
+        officialHeader.appendChild(document.createTextNode("Correction officielle"));
+        let officialParagraph = document.createElement("p");
+        cardBody.appendChild(officialParagraph);
+        officialParagraph.setAttribute("class", "card-text");
+        officialParagraph.innerHTML = card.officialCorrection;
+
+        let cardFooter = document.createElement("div");
+        cardElement.appendChild(cardFooter);
+        cardFooter.setAttribute("class", "card-footer small");
+        cardFooter.appendChild(document.createTextNode(card.number));
+      });
+    </script>
   </body>
 </html>
