@@ -39,6 +39,7 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
     <script>
       const cards = [
         {
@@ -448,6 +449,10 @@
         cardFooter.setAttribute("class", "card-footer small");
         cardFooter.appendChild(document.createTextNode(card.number));
       });
+
+      let isotope = new Isotope(
+        "#grid", {itemSelector: ".grid-item", masonry: { horizontalOrder: true }}
+      );
     </script>
   </body>
 </html>
