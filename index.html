@@ -84,6 +84,15 @@
               <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-impact-non" data-filter=".impact-non">
               <label class="btn btn-outline-dark text-nowrap" for="btn-check-impact-non">Non</label>
             </div>
+            <h6>Correction officielle</h6>
+            <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-correction-aucune" data-filter=".correction-aucune">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-correction-aucune">Aucune</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-correction-application" data-filter=".correction-application">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-correction-application">Application</label>
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-correction-reimpression" data-filter=".correction-reimpression">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-correction-reimpression">Réimpression</label>
+            </div>
           </div>
         </div>
       </div>
@@ -109,7 +118,7 @@
     <script>
       const cards = [
         {
-          filters: "set1 ambre rappel impact-oui",
+          filters: "set1 ambre rappel impact-oui correction-aucune",
           name: "Dingo",
           version: "Mousquetaire",
           image: "images/001_004.jpg",
@@ -119,7 +128,7 @@
           number: "4/204 · FR · 1",
         },
         {
-          filters: "set1 ambre rappel impact-oui",
+          filters: "set1 ambre rappel impact-oui correction-aucune",
           name: "Maximus",
           version: "Cheval du palais",
           image: "images/001_010.jpg",
@@ -129,7 +138,7 @@
           number: "10/204 · FR · 1",
         },
         {
-          filters: "set1 ambre capacite impact-oui",
+          filters: "set1 ambre capacite impact-oui correction-application correction-reimpression",
           name: "Prince Philippe",
           version: "Tueur de dragon",
           image: "images/001_016.jpg",
@@ -139,7 +148,7 @@
           number: "16/204 · FR · 1",
         },
         {
-          filters: "set1 ambre rappel impact-oui",
+          filters: "set1 ambre rappel impact-oui correction-aucune",
           name: "Simba",
           version: "Lionceau protecteur",
           image: "images/001_020.jpg",
@@ -149,7 +158,7 @@
           number: "20/204 · FR · 1",
         },
         {
-          filters: "set1 ambre lore impact-oui",
+          filters: "set1 ambre lore impact-oui correction-application correction-reimpression",
           name: "Stitch",
           version: "Surfeur insouciant",
           image: "images/001_021.jpg",
@@ -159,7 +168,7 @@
           number: "21/204 · FR · 1",
         },
         {
-          filters: "set1 amethyste capacite impact-non",
+          filters: "set1 amethyste capacite impact-non correction-aucune",
           name: "Ursula",
           version: "Assoifée de pouvoir",
           image: "images/001_059.jpg",
@@ -169,7 +178,7 @@
           number: "59/204 · FR · 1",
         },
         {
-          filters: "set1 amethyste effet impact-oui",
+          filters: "set1 amethyste effet impact-oui correction-application correction-reimpression",
           name: "Emberlificotage",
           version: "",
           image: "images/001_062.jpg",
@@ -179,7 +188,7 @@
           number: "62/204 · FR · 1",
         },
         {
-          filters: "set1 emeraude capacite impact-oui",
+          filters: "set1 emeraude capacite impact-oui correction-application correction-reimpression",
           name: "Cruella d’Enfer",
           version: "Cruelle Diablesse",
           image: "images/001_072.jpg",
@@ -189,7 +198,7 @@
           number: "72/204 · FR · 1",
         },
         {
-          filters: "set1 emeraude capacite impact-oui",
+          filters: "set1 emeraude capacite impact-oui correction-aucune",
           name: "Génie",
           version: "Fait le show",
           image: "images/001_075.jpg",
@@ -199,7 +208,7 @@
           number: "75/204 · FR · 1",
         },
         {
-          filters: "set1 emeraude effet impact-oui",
+          filters: "set1 emeraude effet impact-oui correction-application correction-reimpression",
           name: "N’écoute que moi",
           version: "",
           image: "images/001_095.jpg",
@@ -209,7 +218,7 @@
           number: "95/204 · FR · 1",
         },
         {
-          filters: "set1 rubis classification impact-non",
+          filters: "set1 rubis classification impact-non correction-reimpression",
           name: "Raiponce",
           version: "Lançant sa chevelure",
           image: "images/001_121.jpg",
@@ -219,7 +228,7 @@
           number: "121/204 · FR · 1",
         },
         {
-          filters: "set1 saphir rappel impact-non",
+          filters: "set1 saphir rappel impact-non correction-application correction-reimpression",
           name: "Tui",
           version: "Chef respecté",
           image: "images/001_143.jpg",
@@ -229,7 +238,7 @@
           number: "143/204 · FR · 1",
         },
         {
-          filters: "set1 saphir capacite impact-oui",
+          filters: "set1 saphir capacite impact-oui correction-application correction-reimpression",
           name: "Panier de noix de coco",
           version: "",
           image: "images/001_166.jpg",
@@ -239,7 +248,7 @@
           number: "166/204 · FR · 1",
         },
         {
-          filters: "set1 acier rappel impact-oui",
+          filters: "set1 acier rappel impact-oui correction-aucune",
           name: "Donald",
           version: "Mousquetaire",
           image: "images/001_177.jpg",
@@ -249,7 +258,7 @@
           number: "177/204 · FR · 1",
         },
         {
-          filters: "set1 acier rappel impact-oui",
+          filters: "set1 acier rappel impact-oui correction-aucune",
           name: "Hercule",
           version: "Vrai héros",
           image: "images/001_181.jpg",
@@ -259,7 +268,7 @@
           number: "181/204 · FR · 1",
         },
         {
-          filters: "set2 ambre capacite impact-non",
+          filters: "set2 ambre capacite impact-non correction-aucune",
           name: "Atchoum",
           version: "Très allergique",
           image: "images/002_022.jpg",
@@ -269,7 +278,7 @@
           number: "22/204 · FR · 2",
         },
         {
-          filters: "set2 ambre effet impact-oui",
+          filters: "set2 ambre effet impact-oui correction-aucune",
           name: "De zéro en héros",
           version: "",
           image: "images/002_032.jpg",
@@ -279,7 +288,7 @@
           number: "32/204 · FR · 2",
         },
         {
-          filters: "set2 emeraude capacite impact-non",
+          filters: "set2 emeraude capacite impact-non correction-reimpression",
           name: "Belle",
           version: "Archère dissimulée",
           image: "images/002_072.jpg",
@@ -289,7 +298,7 @@
           number: "72/204 · FR · 2",
         },
         {
-          filters: "set2 emeraude effet impact-oui",
+          filters: "set2 emeraude effet impact-oui correction-aucune",
           name: "Rebondir",
           version: "",
           image: "images/002_097.jpg",
@@ -299,7 +308,7 @@
           number: "97/204 · FR · 2",
         },
         {
-          filters: "set2 rubis ambiance impact-non",
+          filters: "set2 rubis ambiance impact-non correction-reimpression",
           name: "Fidget",
           version: "Homme de main de Ratigan",
           image: "images/002_108.jpg",
@@ -309,7 +318,7 @@
           number: "108/204 · FR · 2",
         },
         {
-          filters: "set2 rubis classification impact-non",
+          filters: "set2 rubis classification impact-non correction-application correction-reimpression",
           name: "Tigrou",
           version: "Unique en son genre",
           image: "images/002_127.jpg",
@@ -319,7 +328,7 @@
           number: "127/204 · FR · 2",
         },
         {
-          filters: "set2 rubis capacite impact-oui",
+          filters: "set2 rubis capacite impact-oui correction-aucune",
           name: "Clochette du dîner",
           version: "",
           image: "images/002_134.jpg",
@@ -329,7 +338,7 @@
           number: "134/204 · FR · 2",
         },
         {
-          filters: "set2 acier rappel impact-oui",
+          filters: "set2 acier rappel impact-oui correction-aucune",
           name: "Namaari",
           version: "Brume matinale",
           image: "images/002_189.jpg",
@@ -339,7 +348,7 @@
           number: "189/204 · FR · 2",
         },
         {
-          filters: "set2 acier capacite impact-non",
+          filters: "set2 acier capacite impact-non correction-application correction-reimpression",
           name: "Le chasseur",
           version: "Homme de main réticent",
           image: "images/002_194.jpg",
@@ -349,7 +358,7 @@
           number: "194/204 · FR · 2",
         },
         {
-          filters: "set2 acier rappel impact-oui",
+          filters: "set2 acier rappel impact-oui correction-aucune",
           name: "Le Prince",
           version: "N’abandonne jamais",
           image: "images/002_195.jpg",
@@ -359,7 +368,7 @@
           number: "195/204 · FR · 2",
         },
         {
-          filters: "set3 ambre rappel impact-oui",
+          filters: "set3 ambre rappel impact-oui correction-application",
           name: "Baloo",
           version: "von Bruinwald XIII",
           image: "images/003_001.jpg",
@@ -369,7 +378,7 @@
           number: "1/204 · FR · 3",
         },
         {
-          filters: "set3 ambre rappel impact-oui",
+          filters: "set3 ambre rappel impact-oui correction-application",
           name: "Amadou Gentil",
           version: "Le docteur",
           image: "images/003_005.jpg",
@@ -379,7 +388,7 @@
           number: "5/204 · FR · 3",
         },
         {
-          filters: "set3 ambre rappel impact-oui",
+          filters: "set3 ambre rappel impact-oui correction-application",
           name: "Nani",
           version: "Sœur protectrice",
           image: "images/003_012.jpg",
@@ -389,7 +398,7 @@
           number: "12/204 · FR · 3",
         },
         {
-          filters: "set3 ambre rappel impact-oui",
+          filters: "set3 ambre rappel impact-oui correction-application",
           name: "Pluto",
           version: "Protecteur déterminé",
           image: "images/003_017.jpg",
@@ -399,7 +408,7 @@
           number: "17/204 · FR · 3",
         },
         {
-          filters: "set3 emeraude capacite impact-oui",
+          filters: "set3 emeraude capacite impact-oui correction-aucune",
           name: "Frère Tuck",
           version: "Prêtre de Nottingham",
           image: "images/003_073.jpg",
@@ -409,7 +418,7 @@
           number: "73/204 · FR · 3",
         },
         {
-          filters: "set3 emeraude classification impact-non",
+          filters: "set3 emeraude classification impact-non correction-application",
           name: "Ursula",
           version: "La plus perfide de toutes",
           image: "images/003_091.jpg",
@@ -419,7 +428,7 @@
           number: "91/204 · FR · 3",
         },
         {
-          filters: "set3 rubis capacite impact-oui",
+          filters: "set3 rubis capacite impact-oui correction-application",
           name: "Prince Éric",
           version: "Maître timonier",
           image: "images/003_121.jpg",
@@ -429,7 +438,7 @@
           number: "121/204 · FR · 3",
         },
         {
-          filters: "set3 saphir rappel impact-oui",
+          filters: "set3 saphir rappel impact-oui correction-aucune",
           name: "Kit",
           version: "Copilote",
           image: "images/003_147.jpg",
@@ -439,7 +448,7 @@
           number: "147/204 · FR · 3",
         },
         {
-          filters: "set3 acier rappel impact-oui",
+          filters: "set3 acier rappel impact-oui correction-application",
           name: "Kida",
           version: "Guerrière royale",
           image: "images/003_177.jpg",
@@ -449,7 +458,7 @@
           number: "177/204 · FR · 3",
         },
         {
-          filters: "set3 acier rappel impact-oui",
+          filters: "set3 acier rappel impact-oui correction-application",
           name: "Petit Jean",
           version: "Compagnon de Robin",
           image: "images/003_179.jpg",
@@ -459,7 +468,7 @@
           number: "179/204 · FR · 3",
         },
         {
-          filters: "set4 rubis capacite impact-oui",
+          filters: "set4 rubis capacite impact-oui correction-aucune",
           name: "Tuk Tuk",
           version: "Partenaire percutant",
           image: "images/004_127.jpg",
@@ -469,7 +478,7 @@
           number: "127/204 · FR · 4",
         },
         {
-          filters: "set4 saphir capacite impact-oui",
+          filters: "set4 saphir capacite impact-oui correction-aucune",
           name: "Hans",
           version: "Noble crapule",
           image: "images/004_146.jpg",
