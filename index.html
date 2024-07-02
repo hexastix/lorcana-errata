@@ -514,10 +514,12 @@
 
         let cardNameHeading = document.createElement("h5");
         cardHeaderLeft.appendChild(cardNameHeading);
+        cardNameHeading.setAttribute("class", "name");
         cardNameHeading.appendChild(document.createTextNode(card.name));
 
         let cardVersionHeading = document.createElement("h6");
         cardHeaderLeft.appendChild(cardVersionHeading);
+        cardVersionHeading.setAttribute("class", "version");
         cardVersionHeading.appendChild(document.createTextNode(card.version || "\u00A0"));
 
         let cardHeaderRight = document.createElement("div");
@@ -568,7 +570,13 @@
       });
 
       let isotope = new Isotope(
-        "#grid", {itemSelector: ".grid-item", masonry: { horizontalOrder: true }}
+        "#grid",
+        {
+          itemSelector: ".grid-item",
+          masonry: { horizontalOrder: true },
+          getSortData: { name: ".name", version: ".version" },
+          sortBy: ["name", "version"],
+        },
       );
 
       const arrange = (event) => {
