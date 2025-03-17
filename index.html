@@ -27,14 +27,14 @@
           </span>
         </div>
         <div>
-          <span class="navbar-text me-2"><span class="num-filtered">56</span>/56 cartes</span>
+          <span class="navbar-text me-2"><span class="num-filtered">58</span>/58 cartes</span>
           <button type="button" class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
             <span id="funnel-icon" class="bi-funnel"></span>
           </button>
         </div>
         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
           <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Filtres (<span class="num-filtered">56</span>/56 cartes)</h5>
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Filtres (<span class="num-filtered">58</span>/58 cartes)</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>
           <div class="offcanvas-body">
@@ -88,6 +88,8 @@
             </div>
             <h6>Type de texte</h6>
             <div class="d-flex flex-wrap gap-2 mb-4 button-group">
+              <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-nom" data-filter=".nom">
+              <label class="btn btn-outline-dark text-nowrap" for="btn-check-nom">Nom</label>
               <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-classification" data-filter=".classification">
               <label class="btn btn-outline-dark text-nowrap" for="btn-check-classification">Classification</label>
               <input type="checkbox" autocomplete="off" class="btn-check" id="btn-check-effet" data-filter=".effet">
@@ -669,6 +671,17 @@
           number: "74/204 · FR · 5",
         },
         {
+          filters: "set5 emeraude nom impact-non correction-application",
+          name: "Obscurosphère",
+          version: "",
+          sorting: "Obscurosphere",
+          image: "images/005_099.jpg",
+          incorrectText: "<mark>Obscurospère</mark>",
+          correctedText: "<mark>Obscurosphère</mark>",
+          officialCorrection: "Corrigé sur l’application",
+          number: "99/204 · FR · 5",
+        },
+        {
           filters: "set6 amethyste classification impact-non correction-application",
           name: "Iago",
           version: "Perroquet tenace",
@@ -700,6 +713,17 @@
           correctedText: "Lorsque vous jouez cet objet, choisissez un personnage qui subit -1 <img style=\"width: 1em;\" src=\"images/S.svg\" /> <mark>pour le reste de ce tour</mark> pour chaque Objet Microrobots que vous avez en jeu.",
           officialCorrection: "Aucune",
           number: "167/204 · FR · 6",
+        },
+        {
+          filters: "set7 amethyste nom impact-oui correction-application",
+          name: "C'est ma famille",
+          version: "",
+          sorting: "C est ma famille",
+          image: "images/007_081.jpg",
+          incorrectText: "<mark>On est une</mark> famille",
+          correctedText: "<mark>C'est ma</mark> famille",
+          officialCorrection: "Corrigé sur l’application",
+          number: "81/204 · FR · 7",
         },
         {
           filters: "set7 amethyste rubis capacite impact-oui correction-aucune",
